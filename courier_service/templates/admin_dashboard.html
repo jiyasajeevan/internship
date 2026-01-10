@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Admin Dashboard</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Users</h3>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for user in users %}
+                        <tr>
+                            <td>{{ user.username }}</td>
+                            <td>{{ user.email }}</td>
+                            <td>{{ user.phone_number }}</td>
+                            <td><a href="{% url 'delete_user' user.id %}" class="btn btn-sm btn-danger" onclick="return confirm('Delete user?')">Delete</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h3>Parcels</h3>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>User</th>
+                            <th>Sender</th>
+                            <th>Receiver</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for parcel in parcels %}
+                        <tr>
+                            <td>{{ parcel.id }}</td>
+                            <td>{{ parcel.user.username }}</td>
+                            <td>{{ parcel.sender_name }}</td>
+                            <td>{{ parcel.receiver_name }}</td>
+                            <td><span class="badge 
+                                {% if parcel.status == 'delivered' %}bg-success
+                                {% elif parcel.status == 'will_arrive_soon' or parcel.status == 'started_journey' %}bg-warning text-dark
+                                {% elif parcel.status == 'accepted' or parcel.status == 'will_reach_soon' or parcel.status == 'collected' %}bg-info
+                                {% else %}bg-secondary{% endif %}">{{ parcel.get_status_display }}</span></td>
+                            <td><a href="{% url 'update_parcel_status' parcel.id %}" class="btn btn-sm btn-warning">Update</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}My Parcels{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>My Parcels</h2>
+    <a href="{% url 'add_parcel' %}" class="btn btn-primary mb-4">Add New Parcel</a>
+    <div class="row">
+        {% for parcel in parcels %}
+        <div class="col-md-6 mb-4">
+            <div class="card parcel-card">
+                <div class="card-body">
+                    <h5 class="card-title">Parcel #{{ parcel.id }}</h5>
+                    <p class="card-text"><strong>Sender:</strong> {{ parcel.sender_name }}</p>
+                    <p class="card-text"><strong>Receiver:</strong> {{ parcel.receiver_name }}</p>
+                    <p class="card-text"><strong>Status:</strong> <span class="badge 
+                        {% if parcel.status == 'delivered' %}bg-success
+                        {% elif parcel.status == 'will_arrive_soon' or parcel.status == 'started_journey' %}bg-warning text-dark
+                        {% elif parcel.status == 'accepted' or parcel.status == 'will_reach_soon' or parcel.status == 'collected' %}bg-info
+                        {% else %}bg-secondary{% endif %}">{{ parcel.get_status_display }}</span></p>
+                    <p class="card-text"><strong>Created:</strong> {{ parcel.created_at|date:"M d, Y" }}</p>
+                    <a href="{% url 'parcel_tracking' parcel.id %}" class="btn btn-info">Track</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

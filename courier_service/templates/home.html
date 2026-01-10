@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="home-hero">
+    <div class="container">
+        <h1>Welcome to Courier Service</h1>
+        <p>Manage your parcels efficiently and track them in real-time.</p>
+        {% if user.is_authenticated %}
+            <a href="{% url 'add_parcel' %}" class="btn btn-light btn-lg">Add New Parcel</a>
+        {% else %}
+            <a href="{% url 'register' %}" class="btn btn-light btn-lg me-3">Get Started</a>
+            <a href="{% url 'login' %}" class="btn btn-outline-light btn-lg">Login</a>
+        {% endif %}
+    </div>
+</div>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card parcel-card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Track Parcels</h5>
+                    <p class="card-text">Monitor your parcel status in real-time.</p>
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'my_parcels' %}" class="btn btn-primary">View Parcels</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card parcel-card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Admin Panel</h5>
+                    <p class="card-text">Manage users and update parcel statuses.</p>
+                    {% if user.is_staff %}
+                        <a href="{% url 'admin_dashboard' %}" class="btn btn-primary">Admin Dashboard</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

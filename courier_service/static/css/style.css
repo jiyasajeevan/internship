@@ -1,0 +1,321 @@
+/* Custom styles for Courier Service */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #fff8f0;
+}
+
+.navbar {
+    background: linear-gradient(to right, rgb(186, 74, 26),rgb(255, 156, 69),rgb(186, 74, 26) )!important;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: white !important;
+}
+
+.navbar-nav .nav-link {
+    color: white !important;
+}
+
+.btn-primary {
+    background: linear-gradient(to right, rgb(186, 74, 26));
+    border: none;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(to right, rgb(186, 74, 26));
+    opacity: 0.9;
+}
+
+.btn-warning {
+    background: linear-gradient(to right, #ff6b35, #f7931e, #ff6b35);
+    border: none;
+}
+
+.btn-warning:hover {
+    background: linear-gradient(to right, #ff6b35, #f7931e, #ff6b35);
+    opacity: 0.9;
+}
+
+.btn-danger {
+    background: linear-gradient(to right, #dc3545, #c82333, #dc3545);
+    border: none;
+}
+
+.btn-danger:hover {
+    background: linear-gradient(to right, #dc3545, #c82333, #dc3545);
+    opacity: 0.9;
+}
+
+.btn-info {
+    background: linear-gradient(to right, #17a2b8, #138496, #17a2b8);
+    border: none;
+}
+
+.btn-info:hover {
+    background: linear-gradient(to right, #17a2b8, #138496, #17a2b8);
+    opacity: 0.9;
+}
+
+.btn-secondary {
+    background: linear-gradient(to right, #6c757d, #5a6268, #6c757d);
+    border: none;
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(to right, #6c757d, #5a6268, #6c757d);
+    opacity: 0.9;
+}
+
+.btn-light {
+    background: linear-gradient(to right, #f8f9fa, #e9ecef, #f8f9fa);
+    border: 1px solid #dee2e6;
+    color: #212529;
+}
+
+.btn-light:hover {
+    background: linear-gradient(to right, #f8f9fa, #e9ecef, #f8f9fa);
+    opacity: 0.9;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+.table {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.table th {
+    background: linear-gradient(to right, rgb(186, 74, 26));
+    color: white;
+    border: none;
+}
+
+.form-control {
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input, select, textarea {
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: rgb(186, 74, 26);
+    box-shadow: 0 0 0 0.2rem rgba(186, 74, 26, 0.25);
+    outline: none;
+}
+
+.form-select {
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-select:focus {
+    border-color: rgb(186, 74, 26);
+    box-shadow: 0 0 0 0.2rem rgba(186, 74, 26, 0.25);
+}
+
+.alert {
+    border-radius: 10px;
+}
+
+.home-hero {
+    background: linear-gradient(135deg, rgb(186, 74, 26) 0%, rgb(186, 74, 26) 100%);
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+    border-radius: 0 0 50px 50px;
+}
+
+.home-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.home-hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.tracking-list .list-group-item {
+    border-left: 4px solid rgb(186, 74, 26);
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+}
+
+.parcel-card {
+    transition: transform 0.2s;
+    border-radius: 10px;
+}
+
+.parcel-card:hover {
+    transform: translateY(-5px);
+}
+
+.badge {
+    font-size: 0.8em;
+}
+
+.card-header {
+    background: linear-gradient(to right, rgb(186, 74, 26));
+    color: white;
+    border-radius: 10px 10px 0 0 !important;
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.badge.bg-success {
+    background: linear-gradient(to right, #28a745, #20c997, #28a745) !important;
+}
+
+.badge.bg-warning {
+    background: linear-gradient(to right, #ffc107, #fd7e14, #ffc107) !important;
+}
+
+.badge.bg-info {
+    background: linear-gradient(to right, #17a2b8, #0dcaf0, #17a2b8) !important;
+}
+
+.badge.bg-secondary {
+    background: linear-gradient(to right, #6c757d, #adb5bd, #6c757d) !important;
+}
+
+/* Live Tracking Timeline Styles */
+.tracking-timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+.tracking-timeline::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, rgb(186, 74, 26), #ddd);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+    opacity: 0.6;
+    transform: translateX(-10px);
+    transition: all 0.5s ease;
+}
+
+.timeline-item.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -22px;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border: 3px solid white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 1;
+    animation: pulse 2s infinite;
+}
+
+.timeline-marker i {
+    font-size: 14px;
+}
+
+.timeline-content {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid rgb(186, 74, 26);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.timeline-title {
+    margin: 0 0 8px 0;
+    color: rgb(186, 74, 26);
+    font-weight: bold;
+}
+
+.timeline-text {
+    margin: 0;
+    color: #666;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2), 0 0 0 0  rgba(186, 74, 26, 0.7);
+    }
+    70% {
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2), 0 0 0 10px rgba(186, 74, 26, 0);
+    }
+    100% {
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2), 0 0 0 0 rgba(186, 74, 26, 0);
+    }
+}
+
+/* Animate timeline items on load */
+.timeline-item:nth-child(1) { animation-delay: 0.1s; }
+.timeline-item:nth-child(2) { animation-delay: 0.3s; }
+.timeline-item:nth-child(3) { animation-delay: 0.5s; }
+.timeline-item:nth-child(4) { animation-delay: 0.7s; }
+.timeline-item:nth-child(5) { animation-delay: 0.9s; }
+
+.timeline-item {
+    animation: slideInLeft 0.6s ease-out forwards;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Progress Bar Styles */
+.progress {
+    background-color: #e9ecef;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    transition: width 1s ease-in-out;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
